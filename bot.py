@@ -242,6 +242,15 @@ def analyze():
     
     analysis_prompt = f"""You are a crypto trading analyst. Analyze ETH/USDC and create a trading idea.
 
+## Read These Files First
+Before making any decision, read these files:
+1. ~/Documents/Projects/CryptoTrading/data/current_price.md
+2. ~/Documents/Projects/CryptoTrading/data/price_history.md
+3. ~/Documents/Projects/CryptoTrading/data/open_position.md
+4. ~/Documents/Projects/CryptoTrading/data/trading_idea.md (previous analysis)
+5. ~/Documents/Projects/CryptoTrading/data/trade_journal.md (learn from past trades)
+6. ~/Documents/Projects/CryptoTrading/data/AGENT_INSTRUCTIONS.md (your instructions)
+
 ## Current Market Data
 - Current Price: ${price:,.2f}
 - Price Change (from previous check): {change_24h:+.2f}%
@@ -259,14 +268,17 @@ Use web search to find:
 3. Any major ETH price drivers (upcoming upgrades, institutional news, regulatory updates)
 4. Bitcoin and overall crypto market direction
 
-### Step 2: Technical Analysis
+### Step 2: Check Trade Journal
+Read data/trade_journal.md to learn from past winning/losing trades. Try to replicate successful patterns.
+
+### Step 3: Technical Analysis
 Consider:
 1. Price momentum and trend from the data above
 2. Support/resistance levels
 3. If there's an open position, should we hold, exit (take profit/stop loss), or continue holding?
 4. If no position, should we enter a new trade?
 
-### Step 3: Decision
+### Step 4: Decision
 Write your trading idea to: ~/Documents/Projects/CryptoTrading/data/trading_idea.md
 
 The file must contain:
@@ -279,6 +291,12 @@ The file must contain:
 - Entry Price: $XXXX.XX (if ENTER_LONG) or -
 - Stop Loss: $XXXX.XX (5% below entry) or -
 - Take Profit: $XXXX.XX (10% above entry) or -
+
+### Step 5: Update Instructions if Needed
+If these instructions are unclear or you want to improve them, UPDATE: ~/Documents/Projects/CryptoTrading/data/AGENT_INSTRUCTIONS.md
+
+### Step 6: Record Trade
+After closing a trade (win or loss), record it in: ~/Documents/Projects/CryptoTrading/data/trade_journal.md
 
 IMPORTANT: Do your own web research first, then make your decision. Cite specific news or market conditions in your reasoning.
 """

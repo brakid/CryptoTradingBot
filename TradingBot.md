@@ -53,12 +53,14 @@ When analyzing, the agent is instructed to:
 ### Files (all in `~/Documents/Projects/CryptoTrading/data/`)
 ```
 data/
-├── current_price.md    # Latest price data
-├── price_history.md    # Historical prices for analysis
-├── trading_idea.md     # Current trading idea & rationale
-├── open_position.md    # Active trade details (if any)
-├── trade_history.md    # Closed trades log
-└── config.md           # Bot configuration
+├── current_price.md      # Latest price data
+├── price_history.md      # Historical prices for analysis
+├── trading_idea.md       # Current trading idea & rationale
+├── open_position.md      # Active trade details (if any)
+├── trade_history.md     # Closed trades log
+├── trade_journal.md     # Win/loss analysis for learning
+├── AGENT_INSTRUCTIONS.md # Instructions for the AI agent
+└── config.md             # Bot configuration
 ```
 
 ### Trading Idea Format (trading_idea.md)
